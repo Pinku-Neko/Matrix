@@ -147,4 +147,14 @@ public interface Field<E> {
 	 * @return true if it is zero, otherwise false
 	 */
 	boolean isZero();
+	
+	/**
+	 * check if the element is one
+	 * 
+	 * verify if this element has exact the same value as
+	 * the neutral element for multiplication has
+	 * 
+	 * @return true if it is one, otherwise false
+	 */
+	boolean isOne();
 }

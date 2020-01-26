@@ -3,7 +3,7 @@
  */
 package field;
 
-import field.finiteField.FiniteField4;
+import field.galoisField.GFPrime;
 
 /**
  * @author Pinku_Neko
@@ -17,8 +17,8 @@ final class NumberTest {
 	public static void main(final String[] args) {
 		// TODO Auto-generated method stub
 //		final FiniteField2 aNumber = new FiniteField2(1);
-		final FiniteField4 anotherNumber = new FiniteField4(2);
-		final FiniteField4 aNumber = new FiniteField4(3);
+		final GFPrime anotherNumber = new GFPrime(2, 1);
+		final GFPrime aNumber = new GFPrime(2, 1);
 //		final RationalNumber aNumber = new RationalNumber(-1, 1);
 //		final RationalNumber anotherNumber = new RationalNumber(1, -1);
 		System.out.printf("Value: %s \n", aNumber.toString());

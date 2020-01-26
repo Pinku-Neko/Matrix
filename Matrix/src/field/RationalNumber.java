@@ -278,7 +278,25 @@ public class RationalNumber implements Field<RationalNumber> {
 		return this.isSameAs(this.getNeutralElementAdd());
 	}
 	
-	
+	/**
+	 * check if the element is one. 
+	 * 
+	 * verify if this element has exact the same value as
+	 * the neutral element for multiplication has 
+	 * here [ 1 / 1 ]
+	 * 
+	 * precondition: the neutral element for multiplication is defined
+	 * 
+	 * postcondition: return true if it is one, otherwise false
+	 * 
+	 * @return true if it is one, otherwise false
+	 */
+	@Override
+	public boolean isOne() {
+		return this.isSameAs(this.getNeutralElementMult());
+	}
+
+
 	/**
 	 * reduce a rational number to lowest terms and return it 
 	 * 

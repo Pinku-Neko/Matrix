@@ -1,8 +1,10 @@
 package matrix;
 
 import field.RationalNumber;
-import field.finiteField.FiniteField2;
-import field.finiteField.FiniteField4;
+import field.galoisField.GF4;
+import field.galoisField.GF8;
+import field.galoisField.GF9;
+import field.galoisField.GFPrime;
 import matrix.reforming.MatrixReforming;
 
 /**
@@ -21,6 +23,7 @@ class MatrixTest {
 	 * @param args default arguments, not related here
 	 */
 	public static void main(final String[] args) {
+		
 		final RationalNumber[][] rationalArray2D = new RationalNumber[][] {
 			{new RationalNumber(4,7),new RationalNumber(-2,6),new RationalNumber(-2,9)},
 			{new RationalNumber(-2,1),new RationalNumber(3,-1),new RationalNumber(-4,1)},
@@ -30,30 +33,58 @@ class MatrixTest {
 		System.out.println(rationalMatrix.toString());
 		MatrixReforming.gaussianElimination(rationalMatrix);
 		System.out.println(rationalMatrix.toString());
-		final FiniteField2[][] finiteField2Array2D = new FiniteField2[][] {
-			{new FiniteField2(1),new FiniteField2(1),new FiniteField2(1),new FiniteField2(1),new FiniteField2(1)},
-			{new FiniteField2(0),new FiniteField2(0),new FiniteField2(1),new FiniteField2(1),new FiniteField2(1)},
-			{new FiniteField2(0),new FiniteField2(1),new FiniteField2(1),new FiniteField2(0),new FiniteField2(0)},
-			{new FiniteField2(0),new FiniteField2(1),new FiniteField2(0),new FiniteField2(1),new FiniteField2(0)},
-			{new FiniteField2(0),new FiniteField2(0),new FiniteField2(0),new FiniteField2(0),new FiniteField2(0)}
+		
+		final GFPrime[][] finiteField2Array2D = new GFPrime[][] {
+			{new GFPrime(2, 1),new GFPrime(2, 1),new GFPrime(2, 1),new GFPrime(2, 1),new GFPrime(2, 1)},
+			{new GFPrime(2, 0),new GFPrime(2, 0),new GFPrime(2, 1),new GFPrime(2, 1),new GFPrime(2, 1)},
+			{new GFPrime(2, 0),new GFPrime(2, 1),new GFPrime(2, 1),new GFPrime(2, 0),new GFPrime(2, 0)},
+			{new GFPrime(2, 0),new GFPrime(2, 1),new GFPrime(2, 0),new GFPrime(2, 1),new GFPrime(2, 0)},
+			{new GFPrime(2, 0),new GFPrime(2, 0),new GFPrime(2, 0),new GFPrime(2, 0),new GFPrime(2, 0)}
 		};
-		final Matrix<FiniteField2> finiteField2Matrix = new Matrix<FiniteField2>(finiteField2Array2D);
+		final Matrix<GFPrime> finiteField2Matrix = new Matrix<GFPrime>(finiteField2Array2D);
 		System.out.println(finiteField2Matrix.toString());
 		MatrixReforming.gaussianElimination(finiteField2Matrix);
 		System.out.println(finiteField2Matrix.toString());
-		final FiniteField4[][] finiteField4Array2D = new FiniteField4[][] {
-			{new FiniteField4(3),new FiniteField4(1),new FiniteField4(3),new FiniteField4(1)},
-			{new FiniteField4(1),new FiniteField4(3),new FiniteField4(0),new FiniteField4(2)},
-			{new FiniteField4(3),new FiniteField4(3),new FiniteField4(0),new FiniteField4(0)},
-			{new FiniteField4(2),new FiniteField4(0),new FiniteField4(2),new FiniteField4(1)},
-			{new FiniteField4(-4),new FiniteField4(1),new FiniteField4(0),new FiniteField4(1)},
-			{new FiniteField4(0),new FiniteField4(0),new FiniteField4(0),new FiniteField4(2)},
-			{new FiniteField4(3),new FiniteField4(3),new FiniteField4(1),new FiniteField4(1)},
+		
+		final GF4[][] finiteField4Array2D = new GF4[][] {
+			{new GF4(3),new GF4(1),new GF4(3),new GF4(1)},
+			{new GF4(1),new GF4(3),new GF4(0),new GF4(2)},
+			{new GF4(3),new GF4(3),new GF4(0),new GF4(0)},
+			{new GF4(2),new GF4(0),new GF4(2),new GF4(1)},
+			{new GF4(-4),new GF4(1),new GF4(0),new GF4(1)},
+			{new GF4(0),new GF4(0),new GF4(0),new GF4(2)},
+			{new GF4(3),new GF4(3),new GF4(1),new GF4(1)},
 		};
-		final Matrix<FiniteField4> finiteField4Matrix = new Matrix<FiniteField4>(finiteField4Array2D);
+		final Matrix<GF4> finiteField4Matrix = new Matrix<GF4>(finiteField4Array2D);
 		System.out.println(finiteField4Matrix.toString());
 		MatrixReforming.gaussianElimination(finiteField4Matrix);
 		System.out.println(finiteField4Matrix.toString());
+		
+		final GF8[][] finiteField8Array2D = new GF8[][] {
+			{new GF8(3),new GF8(1),new GF8(3),new GF8(1)},
+			{new GF8(1),new GF8(3),new GF8(0),new GF8(2)},
+			{new GF8(3),new GF8(3),new GF8(0),new GF8(0)},
+			{new GF8(2),new GF8(0),new GF8(2),new GF8(1)},
+			{new GF8(-4),new GF8(1),new GF8(0),new GF8(1)},
+			{new GF8(0),new GF8(0),new GF8(0),new GF8(2)},
+			{new GF8(3),new GF8(3),new GF8(1),new GF8(1)},
+		};
+		final Matrix<GF8> finiteField8Matrix = new Matrix<GF8>(finiteField8Array2D);
+		System.out.println(finiteField8Matrix.toString());
+		MatrixReforming.gaussianElimination(finiteField8Matrix);
+		System.out.println(finiteField8Matrix.toString());
+		
+		final GF9[][] finiteField9Array2D = new GF9[][] {
+			{new GF9(0),new GF9(0),new GF9(1),new GF9(7),new GF9(3),new GF9(6),new GF9(2)},
+			{new GF9(2),new GF9(6),new GF9(2),new GF9(3),new GF9(5),new GF9(1),new GF9(5)},
+			{new GF9(3),new GF9(2),new GF9(6),new GF9(5),new GF9(3),new GF9(0),new GF9(0)}
+			
+		};
+		final Matrix<GF9> finiteField9Matrix = new Matrix<GF9>(finiteField9Array2D);
+		System.out.println(finiteField9Matrix.toString());
+		MatrixReforming.gaussianElimination(finiteField9Matrix);
+		System.out.println(finiteField9Matrix.toString());
+		
 	}
 
 }
