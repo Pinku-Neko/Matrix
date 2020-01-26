@@ -62,7 +62,7 @@ final class RowsInteraction {
 	 */
 	private static <E extends Field<E>> void isMatrixInited(final Matrix<E> thisMatrix) {
 		if(thisMatrix == null) {
-			throw new IllegalArgumentException("The matrix cannot be a null-reference");
+			throw new NullPointerException("The matrix cannot be a null-reference");
 		}
 	}
 	
@@ -91,7 +91,7 @@ final class RowsInteraction {
 		cache.addAll(thisMatrix.getMatrix().elementAt(indexOfAnotherRow));
 		thisMatrix.setMatrixRow(indexOfAnotherRow, thisMatrix.getMatrix().elementAt(indexOfOneRow));
 		thisMatrix.setMatrixRow(indexOfOneRow, cache);
-		System.out.println("Row swapped. \n" + thisMatrix.toString());
+//		System.out.println("Row swapped. \n" + thisMatrix.toString());
 	}
 	
 	/**
@@ -129,7 +129,7 @@ final class RowsInteraction {
 				subtractRow(thisMatrix, i, RowTransformation.multiplyRow(thisMatrix.getMatrix().elementAt(rowIndex), factor));
 			}
 		}
-		System.out.println("All other rows cleaned. \n" + thisMatrix.toString());
+//		System.out.println("All other rows cleaned. \n" + thisMatrix.toString());
 	}
 	
 	/**
@@ -158,8 +158,8 @@ final class RowsInteraction {
 			final E currentElement = thisMatrix.getMatrix().elementAt(indexOfRowToBesubtracted).elementAt(i);
 			rowToBeSubtracted.add(currentElement.substract(rowToSubstract.elementAt(i)));
 		}
-		System.out.println("rowToSubstract: " + rowToSubstract.toString());
+//		System.out.println("rowToSubstract: " + rowToSubstract.toString());
 		thisMatrix.setMatrixRow(indexOfRowToBesubtracted, rowToBeSubtracted);
-		System.out.println("Row cleaned. \n" + thisMatrix.toString());
+//		System.out.println("Row cleaned. \n" + thisMatrix.toString());
 	}
 }

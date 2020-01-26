@@ -10,7 +10,7 @@ package field;
  * @author Pinku_Neko
  *
  */
-public final class RationalNumber implements Field<RationalNumber> {
+public class RationalNumber implements Field<RationalNumber> {
 	
 	/**
 	 * the numerator of a rational number
@@ -136,7 +136,11 @@ public final class RationalNumber implements Field<RationalNumber> {
 	 */
 	@Override
 	public RationalNumber getInverseElementMult() {
-		return new RationalNumber(this.denominator, this.numerator).lowestTerms();
+		if (this.isZero()) {
+			throw new IllegalArgumentException("Zero does not have an inverse element for multiplication.");
+		} else {
+			return new RationalNumber(this.denominator, this.numerator).lowestTerms();
+		}
 	}
 	
 	/**
@@ -213,6 +217,18 @@ public final class RationalNumber implements Field<RationalNumber> {
 	}
 	
 	/**
+	 * check if this element is defined
+	 * 
+	 * @return true if defined, otherwise false
+	 */
+	@Override
+	public void checkIfDefined(final RationalNumber element) {
+		if (element == null) {
+			throw new NullPointerException("This element is not defined.");
+		}
+	}
+	
+	/**
 	 * FIXME should actually override Object.equals() but failed
 	 * check if two elements are same. 
 	 * 
@@ -259,11 +275,7 @@ public final class RationalNumber implements Field<RationalNumber> {
 	 */
 	@Override
 	public boolean isZero() {
-		if (this.isSameAs(this.getNeutralElementAdd())) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.isSameAs(this.getNeutralElementAdd());
 	}
 	
 	
@@ -309,5 +321,7 @@ public final class RationalNumber implements Field<RationalNumber> {
 		number1 = number2;
 		number2 = cache;
 	}
+
+	
 
 }	

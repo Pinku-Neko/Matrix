@@ -23,7 +23,7 @@ final class RowTransformation {
 			actualCurrentEchelonRow.set(i, actualCurrentEchelonRow.elementAt(i).dividedBy(theElementToBeDivided));
 		}
 		thisMatrix.setMatrixRow(actualCurrentEchelonIndex, actualCurrentEchelonRow);
-		System.out.println("Row reduced. \n" + thisMatrix.toString());
+//		System.out.println("Row reduced. \n" + thisMatrix.toString());
 	}
 	
 	static final <E extends Field<E>> Vector<E> multiplyRow(final Vector<E> row, final E factor) {
@@ -31,8 +31,8 @@ final class RowTransformation {
 		for (int i = 0; i < row.size(); i++) {
 			rowClone.add(row.elementAt(i).multipliesWith(factor));
 		}
-		System.out.println("factor " + factor.toString());
-		System.out.println("cloned row: " + rowClone.toString());
+//		System.out.println("factor " + factor.toString());
+//		System.out.println("cloned row: " + rowClone.toString());
 		return rowClone;
 	}
 }

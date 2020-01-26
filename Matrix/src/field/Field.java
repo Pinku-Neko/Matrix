@@ -120,6 +120,13 @@ public interface Field<E> {
 	E dividedBy(E element);
 
 	/**
+	 * check if the given element is defined
+	 * 
+	 * @return true if defined, otherwise false
+	 */
+	void checkIfDefined(E element);
+	
+	/**
 	 * check if two elements are same
 	 * 
 	 * verify if this element has exact the same value as
