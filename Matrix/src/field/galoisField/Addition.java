@@ -4,10 +4,20 @@
 package field.galoisField;
 
 /**
+ * this contains the table of addition for 
+ * galois field of an non-prime amount of elements
+ * 
  * @author Pinku_Neko
  *
  */
 enum Addition {
+	
+	
+	/**
+	 * the table of addition for galois field of 4 elements
+	 * 
+	 * fundamental rule: 1 + 1 = 0, α + α = 0.
+	 */
 	F4(new int[][]{
 
 		{0,1,2,3},
@@ -19,6 +29,11 @@ enum Addition {
 
 	F8(new int[][]{
 
+		/**
+		 * the table of addition for galois field of 8 elements 
+		 * 
+		 * fundamental rules: 1 + 1 = 0, β + β = 0, β² + β² = 0.
+		 */
 		{0,1,2,3,4,5,6,7},
 		{1,0,3,2,5,4,7,6},
 		{2,3,0,1,6,7,4,5},
@@ -30,6 +45,11 @@ enum Addition {
 
 	} ),
 	
+	/**
+	 * the table of addition for galois field of 9 elements 
+	 * 
+	 * fundamental rules: 1 + 1 = -1, ι + ι = -ι. 
+	 */
 	F9(new int[][]{
 
 		{0,1,2,3,4,5,6,7,8},
@@ -44,13 +64,24 @@ enum Addition {
 
 	} );
 
+	/**
+	 * the table as the element of each enumeration
+	 */
 	private final int[][] table;
 
+	/**
+	 * create the enumeration having the element table 
+	 * for access to table
+	 * 
+	 * @param table
+	 */
 	private Addition(final int[][] table) {
 		this.table = table;
 	}
 
 	/**
+	 * return the table for the user
+	 * 
 	 * @return the table
 	 */
 	public int[][] getTable() {

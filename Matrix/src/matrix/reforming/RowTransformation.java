@@ -28,11 +28,16 @@ final class RowTransformation {
 	
 	static final <E extends Field<E>> Vector<E> multiplyRow(final Vector<E> row, final E factor) {
 		final Vector<E> rowClone = new Vector<E>(0,1);
-		for (int i = 0; i < row.size(); i++) {
-			rowClone.add(row.elementAt(i).multipliesWith(factor));
-		}
 //		System.out.println("factor " + factor.toString());
+		for (int i = 0; i < row.size(); i++) {
+			rowClone.add(row.elementAt(i));
+		}
 //		System.out.println("cloned row: " + rowClone.toString());
-		return rowClone;
+		final Vector<E> multipliedRow = new Vector<E>(0,1);
+		for (int i = 0; i < rowClone.size(); i++) {
+			multipliedRow.add(rowClone.elementAt(i).multipliesWith(factor));
+		}
+//		System.out.println("multiplied row: " + multipliedRow.toString());
+		return multipliedRow;
 	}
 }

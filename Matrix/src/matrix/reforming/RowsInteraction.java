@@ -143,23 +143,24 @@ final class RowsInteraction {
 	 * 
 	 * @param <E>  the field this matrix is using
 	 * @param thisMatrix the matrix
-	 * @param indexOfRowToBesubtracted the index of the row to be subtracted
-	 * @param rowToSubstract the row used to subtract other rows
+	 * @param indexOfRowToBeSubtracted the index of the row to be subtracted
+	 * @param rowToSubtract the row used to subtract other rows
 	 */
 	private static final <E extends Field<E>> void subtractRow(
 			final Matrix<E> thisMatrix, 
-			final int indexOfRowToBesubtracted, 
-			final Vector<E> rowToSubstract) {
+			final int indexOfRowToBeSubtracted, 
+			final Vector<E> rowToSubtract) {
 		isMatrixInited(thisMatrix);
-		doesRowExist(thisMatrix, indexOfRowToBesubtracted);
+		doesRowExist(thisMatrix, indexOfRowToBeSubtracted);
 		
 		final Vector<E> rowToBeSubtracted = new Vector<E>(0, 1);
+//		System.out.println("rowToSubtract: " + rowToSubtract.toString());
 		for (int i = 0; i < thisMatrix.getLength(); i++) {
-			final E currentElement = thisMatrix.getMatrix().elementAt(indexOfRowToBesubtracted).elementAt(i);
-			rowToBeSubtracted.add(currentElement.substract(rowToSubstract.elementAt(i)));
+			final E currentElement = thisMatrix.getMatrix().elementAt(indexOfRowToBeSubtracted).elementAt(i);
+			rowToBeSubtracted.add(currentElement.substract(rowToSubtract.elementAt(i)));
 		}
-//		System.out.println("rowToSubstract: " + rowToSubstract.toString());
-		thisMatrix.setMatrixRow(indexOfRowToBesubtracted, rowToBeSubtracted);
+//		System.out.println("subtractedRow: " + rowToBeSubtracted.toString());
+		thisMatrix.setMatrixRow(indexOfRowToBeSubtracted, rowToBeSubtracted);
 //		System.out.println("Row cleaned. \n" + thisMatrix.toString());
 	}
 }

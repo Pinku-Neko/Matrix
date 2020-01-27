@@ -1,6 +1,19 @@
 package field.galoisField;
 
+/**
+ * this contains the table of multiplication 
+ * for galois field of an non-prime amount of elements
+ * 
+ * @author Pinku_Neko
+ *
+ */
 enum Multiplication {
+	
+	/**
+	 * the table of multiplication for galois field of 4 elements
+	 * 
+	 * fundamental rule: α² = 1 + α.
+	 */
 	F4(new int[][]{
 		
 		{0,0,0,0},
@@ -10,6 +23,11 @@ enum Multiplication {
 		
 	} ),
 
+	/**
+	 * the table of addition for galois field of 8 elements 
+	 * 
+	 * fundamental rules: β^3 = 1 + β.
+	 */
 	F8(new int[][]{
 
 		{0,0,0,0,0,0,0,0},
@@ -23,6 +41,11 @@ enum Multiplication {
 
 	} ),
 	
+	/**
+	 * the table of multiplication for galois field of 9 elements 
+	 * 
+	 * fundamental rules: ι²= -1. 
+	 */
 	F9(new int[][]{
 
 		{0,0,0,0,0,0,0,0,0},
@@ -37,16 +60,27 @@ enum Multiplication {
 
 	} );
 
+	/**
+	 * the table as the element of each enumeration
+	 */
 	private final int[][] table;
 	
+	/**
+	 * create the enumeration having the element table 
+	 * for access to table
+	 * 
+	 * @param table
+	 */
 	private Multiplication(final int[][] table) {
 		this.table = table;
 	}
 
 	/**
+	 * return the table for the user
+	 * 
 	 * @return the table
 	 */
 	public int[][] getTable() {
-		return table;
+		return this.table;
 	}
 }

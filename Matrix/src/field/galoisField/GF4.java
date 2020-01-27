@@ -2,6 +2,12 @@ package field.galoisField;
 
 import field.Field;
 
+/**
+ * 
+ * 
+ * @author Pinku_Neko
+ *
+ */
 public class GF4 implements Field<GF4> {
 
 	private final byte value;
