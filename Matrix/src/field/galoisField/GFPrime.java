@@ -6,14 +6,13 @@ package field.galoisField;
 import field.Field;
 
 /**
- * a galois field having prime amount of elements 
+ * a galois field having prime amount of elements
  * 
- * a galois field (also called finite field) 
- * of finite amount of elements. The galois 
- * field is divided in two different types. 
+ * a galois field (also called finite field) of finite amount of elements. The
+ * galois field is divided in two different types.
  * 
- * This class represents the galois field, in which 
- * the amount of elements is prime.
+ * This class represents the galois field, in which the amount of elements is
+ * prime.
  * 
  * @author Pinku_Neko
  *
@@ -21,34 +20,30 @@ import field.Field;
 public class GFPrime implements Field<GFPrime> {
 
 	/**
-	 * The value or index of each element. 
+	 * The value or index of each element.
 	 * 
-	 * Each element has its equivalent class, which
-	 * the difference between them is the amount of 
-	 * elements
+	 * Each element has its equivalent class, which the difference between them is
+	 * the amount of elements
 	 */
 	private final int value;
-	
-	
+
 	/**
-	 * The amount of elements in a galois field. 
+	 * The amount of elements in a galois field.
 	 * 
-	 * Each time a value is added by another number 
-	 * to the amount of elements or above it, it will 
-	 * be subtracted by the amount of elements until it 
-	 * is in the range again.
+	 * Each time a value is added by another number to the amount of elements or
+	 * above it, it will be subtracted by the amount of elements until it is in the
+	 * range again.
 	 */
 	private final int amountElements;
-	
+
 	/**
-	 * create a number in a given galois field 
+	 * create a number in a given galois field
 	 * 
 	 * precondition: the amount of elements is a prime number
 	 * 
-	 * postcondition: create a number of galois field having 
-	 * given amount of elements 
-	 * and adjust the value to its equivalent class between 
-	 * 0 and amount of elements
+	 * postcondition: create a number of galois field having given amount of
+	 * elements and adjust the value to its equivalent class between 0 and amount of
+	 * elements
 	 */
 	public GFPrime(final int amountElements, int argument) {
 		checkIfValid(amountElements);
@@ -65,20 +60,20 @@ public class GFPrime implements Field<GFPrime> {
 	/**
 	 * check if a number is valid aka. prime.
 	 * 
-	 * do nothing if the number is prime, 
-	 * otherwise throw an IllegalArgumentException
+	 * do nothing if the number is prime, otherwise throw an
+	 * IllegalArgumentException
 	 * 
-	 * @param amountElements the given argument tends to be used 
-	 * to create a galois field
+	 * @param amountElements the given argument tends to be used to create a galois
+	 *                       field
 	 */
 	private void checkIfValid(final int amountElements) {
-		if ( !( isPrime(amountElements) ) ) {
+		if (!(isPrime(amountElements))) {
 			throw new IllegalArgumentException("the given amount of elements is not prime.");
 		}
 	}
 
 	/**
-	 * check if a number is prime. 
+	 * check if a number is prime.
 	 * 
 	 * return true if the number is prime as following
 	 * 
@@ -88,11 +83,11 @@ public class GFPrime implements Field<GFPrime> {
 	private boolean isPrime(final int amountElements) {
 		if (amountElements < 2) {
 			return false;
-		} 
+		}
 		if (amountElements < 4) {
 			return true;
 		} else {
-			for (int i = 2; i < Math.sqrt( amountElements); i++) {
+			for (int i = 2; i < Math.sqrt(amountElements); i++) {
 				if (amountElements / i == 0) {
 					return false;
 				}
@@ -105,8 +100,6 @@ public class GFPrime implements Field<GFPrime> {
 	public String toString() {
 		return String.format("%d", this.value);
 	}
-
-
 
 	/**
 	 * @return the value
@@ -165,10 +158,10 @@ public class GFPrime implements Field<GFPrime> {
 			throw new NullPointerException("This element is not defined.");
 		}
 	}
-	
+
 	@Override
 	public boolean isSameAs(final GFPrime element) {
-		if(element == null) {
+		if (element == null) {
 			return false;
 		}
 		if (this.value == element.value) {

@@ -1,7 +1,6 @@
 
 /**
- * This package contains methods to reform 
- * a matrix
+ * This package contains methods to reform a matrix
  * 
  * @author Pinku_Neko
  *

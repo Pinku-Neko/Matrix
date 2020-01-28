@@ -11,10 +11,10 @@ import field.Field;
 public class GF4 implements Field<GF4> {
 
 	private final byte value;
-	
+
 	public GF4(final int argument) {
 		if (argument < 0) {
-			this.value = (byte) ( (0 - argument) % 4);
+			this.value = (byte) ((0 - argument) % 4);
 		} else {
 			this.value = (byte) (argument % 4);
 		}

@@ -20,9 +20,8 @@ public class Matrix<E extends Field<E>> {
 	private final Vector<Vector<E>> matrix = new Vector<Vector<E>>(0, 1);
 	private final int length;
 	private final int height;
-	private final Map<Integer, Integer> mapEchelonColumn 
-	= new TreeMap<Integer, Integer>();
-	
+	private final Map<Integer, Integer> mapEchelonColumn = new TreeMap<Integer, Integer>();
+
 	public Matrix(final E[][] array2D) {
 		checkValidity(array2D);
 		fillElements(array2D);
@@ -123,7 +122,6 @@ public class Matrix<E extends Field<E>> {
 		this.mapEchelonColumn.put(amountEchelon, columnCount);
 	}
 
-	
 	public final void setMatrixRow(final int rowToBeReplaced, final Vector<E> rowToReplace) {
 		for (int index = 0; index < this.matrix.elementAt(rowToBeReplaced).size(); index++) {
 			this.matrix.elementAt(rowToBeReplaced).set(index, rowToReplace.elementAt(index));
