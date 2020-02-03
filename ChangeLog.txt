@@ -1,5 +1,9 @@
 Matrix ChangeLog:
 
+03/02/2020
+realized that this programm is way to complex to be done quickly and easily. And the structure of this project is BAD. 
+planning on modelling and rewriting the programm.
+
 01/26/2020
 added GF4/8/9 and all prime numbers
 coming: docs and other matrix reforming operations
